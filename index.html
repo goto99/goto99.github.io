@@ -2,34 +2,67 @@
 <html>
     <head>
         <title>学以致用</title>
+        <style>
+            div, p  {
+                color: blue;
+                text-align: center;
+            }
+            .headline {
+                color: black;
+                text-align: center;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            ul, li {
+                text-align: left;
+            }
+        </style>
+
     </head>
+
     <body>
-        <h1>学以致用</h1>
+        <h1 class='headline'>学以致用</h1>
         <div>
-            <h2>一、MOOC学习笔记</h2>
-            <p>41岁从头开始学习计算机和相关高等数学知识，建站以记录，随着学习的深入，逐步完善站点内容。</p>
+            <h2 class='headline'>一、MOOC学习笔记</h2>
+            <div>
+                <p>41岁从头开始学习计算机和相关高等数学知识，建站以记录，随着学习的深入，逐步完善站点内容。</p>
+            </div>
+            
+            <h3 class='headline'>（一）CS课程</h3>
             <ol>
                 <li>
                     <a href="/moocs/cs50w.html">CS50W</a>
                 </li>
                 <li>CS50P</li>
+                <li>
+                    <a href="/moocs/html-css-javascript-for-web-developers.html">HTML, CSS, and Javascript for Web Developers</a>
+                </li>
+                <li>
+                    <a href="/moocs/introduction-to-html5.html">Introduction to HTML5</a>
+                </li>
+            </ol>
+
+            <h3 class='headline'>（二）数学课程</h3>
+            <ol>
+                <li>
+                    <a href="/moocs/18.01.2x.html">MIT 18.01.2x Calculus 1B: Integration</a>
+                </li>
             </ol>
         </div>
         <div>
-            <h2>二、个人开发</h2>
+            <h2 class='headline'>二、个人开发</h2>
             <ol>
                 <li>待补充</li>
             </ol>
         </div>
         <div>
-            <h2>三、中学数学</h2>
+            <h2 class='headline'>三、中学数学</h2>
             <ol>
                 <li>初中数学</li>
                 <li>高中数学</li>
             </ol>
         </div>
         <div>
-            <h2><a href="/journal/site-log.html">四、建站日志</a></h2>
+            <h2 class='headline'><a href="/journal/site-log.html">四、建站日志</a></h2>
         </div>
     </body>
 </html>

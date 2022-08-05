@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Stanford University: Introduction to Statistics 学习笔记
+        </title>
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width">
+        <script>
+        MathJax = {
+          tex: {
+            tags: 'all'
+          }
+        };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>        
+    </head>
+    <body>
+        <h1>课程名称：Introduction to Statistics</h1>
+        <a href="https://www.coursera.org/learn/stanford-statistics/home/info">课程链接</a>
+
+
+        <h2>学习笔记</h2>
+        <div>
+            <ol>
+                <li><h3>Week 3 Normal Approximation and Binomial Distribution, Sampling Distributions and the Central Limit Theorem</h3> </li>
+                <ul>
+                    <li style="font-weight: bold;">The Empirical Rule</li>
+                    <div  style="padding: 10px;">
+                        If the data follow the normal curve, then (1) about 2/3 (68%) of the data fall within one standard deviation of the mean, (2) about 95% 
+                        fall withing 2 standard deviations of the mean, (3) about 99.7% fall within 3 standard deviations of the mean.
+                    </div>
+
+                    <li style="font-weight: bold;">The Expected Value, Standard Error (SE)</li>
+                    <div  style="padding: 10px;">
+                        The standard error (SE) of a statistic tells roughly how far off the statistic will be from its expected value (population mean).
+                        ------SE的数学意义是对样本统计量（statistic）与总体参数（parameter）之间的偏差的估计。
+                        So the SE for a statistic plays the same role that the standard deviation &sigma; plays for one observation drawn at random.<br>
+                        Notice that the SE of sample mean , the SE of sample sum (count) and the SE of sample percentages are different.<br>
+                   
+                        SE of sample mean: $$SE(\overline x_n ) = {\sigma \over\sqrt{n}} \label{ref1}$$
+                        SE of sample sum (count): $$SE(S_n) = SE(n\overline x_n) =  {\sqrt{n}\sigma}$$
+                        SE of sample percentage: $$SE({S_n \over n} \times 100\% ) = SE(\overline x_n  \times 100\%) =  {{\sigma \over \sqrt{n}} \times 100\%}$$
+
+                    </div>
+
+                    <li style="font-weight: bold;">Sampling Distribution of a Statistic</li>
+                    <div  style="padding: 10px;">
+                        There are three histograms that are easily get confused: (1) the empirical histogram shows the observed data, (2) the probability histogram 
+                        of statistic shows the sampling distribution of statistic, (3) the probability histogram for producing the data shows what the chances are 
+                        for simulating.
+                    </div>
+
+                    <li style="font-weight: bold;">The Law of Large Numbers</li>
+                    <div  style="padding: 10px;">
+                        According to equation (\ref{ref1}), the standard error of sample mean, goes to zero as the sample size n increases. Therefore the sample mean 
+                        will likely be close to its expected value &mu; if the sample size n is large. This is the law of large numbers. Keep in mind that the law of 
+                        large numbers applies 
+                        <ul>
+                        <li>for averages and therefor also for percentages, but not for sums as their SE increases</li>
+                        <li>for sampling with replacement from a population, or for simulating data from a probability histogram</li>
+                        <li>more advanced version of the law of large numbers state that the empirical histogram of the data will be close to the probability histogram. 
+                            If the sample size n is large.</li>
+                        </ul>
+                    </div>
+    
+                    <li style="font-weight: bold;">The Central Limit Theorem</li>
+
+                </ul>
+                <li><h3>Week 4 Regression</h3> </li>
+                <ul>
+                    <li style="font-weight: bold;">Correlation</li>
+                    <div  style="padding: 10px;">
+                        Correlation Coefficient
+                        $$r = {{1\over {n-1}} \Sigma _i^n {(x_i-\overline x) \over {s_x}}{(y_i-\overline y) \over {s_y}}}$$
+                        Note that the formula is actually the sum of the products of the corresponding z-scores divided by 1 less than the sample size n.
+                        <p>Keep in mind that Correlation Coefficient is only useful for measuring linear association. It should be stressed that a correlation at or 
+                            near zero doesn't mean there isn't a relationship between the variables; there may still be a strong non-linear relationship. Also remember 
+                            that correlation does not mean causation.</p>
+                    </div>
+
+                    <li style="font-weight: bold;">Coefficient of determination</li>
+                    <div style="padding: 10px;">
+                        r<sup>2</sup> is the ratio of the variance of the predicted value to the variance of the observed value y. That is, there is a partition of the 
+                        y-variance, and r<sup>2</sup> is the proportion of this variance that is predictable from a knowledge of x. How large a value of r<sup>2</sup> 
+                        is desirable depends on the application under consideration. While scientific experiments often aim for an r<sup>2</sup> in the 90% or above range, 
+                        observational studies with r<sup>2</sup> of 10% to 20% might be considered informative.(These two points together is exactly what confuses people 
+                        a lot.)
+                    </div>
+                    <li style="font-weight: bold;">Least Square Regression line</li>
+                    <div style="padding: 10px;">
+                        $$ \hat y - \overline y = b_1(x-\overline x)$$
+                        The slope of the Least Square Regression line can be determined from the formula $$b_1 = {r {{s_y}\over {s_x}}}$$
+                        That is each standard deviation change in x results in a change of r standard deviations in y. 
+                        We can rewrite the regression line as $$ {{\hat y -\overline y} \over {s_y}} = r{{x-\overline x} \over {s_x}} \Rightarrow z_y = rz_x \label{ref7}$$
+                        <p>It is also important to understand that even if a linear model is appropriate, it may still be weak with a low correlation coefficient. And, 
+                            alternatively, even if the residual plot shows a non perfect linear relationship,
+                            with high r<sup>2</sup>, the linear model still might be a good model for the problem at hand.
+                        </p>
+                    </div>
+
+                    <li style="font-weight: bold;">Inference in Regression</li>
+                    <div style="padding: 10px;">
+                        Regression to the mean (or: the regression effect) is simply a consequence of there being a scatter around the regression line. Erroneously 
+                        assuming that this occurs due to some action is the regression fallacy. <br>
+                        Note that from formula (\ref{ref7}) Predicting y from x and x from y are different, there are two different regression line equations, don't 
+                        misuse one equation for two kinds of prediction.
+                    </div>
+                    <li style="font-weight: bold;">Residual Plots, Heteroscedasticity, and Transformations</li>
+                    <div style="padding: 10px;">
+                        Note that order is important, residual equals observed minus predicted $$\hat e_i = y_i - \hat y_i$$ 
+                        When plot y-residuals vesus x, if any trends present, it's not appropriate to use linear regression to predict y from x directly, transformations 
+                        of x or y are needed. If residuals open up, the residual scatter 
+                        is heteroscedastic, transformation of y variable is needed.
+                    </div>
+
+                </ul>
+                <li><h3>Week 5 Confidence Intervals, Tests of Significance</h3> </li>
+                <ul>
+                        <li style="font-weight: bold;">Confidence Intervals</li>
+                        <div  style="padding: 10px;">
+                        </div>
+
+                        <li style="font-weight: bold;">Hypothesis Testing</li>
+                        <div  style="padding: 10px;">
+                        </div>
+                </ul>
+
+            </ol>
+        </div>
+        
+        <div>
+            <p>个人评价：</p>
+            <ul>
+                <li>语言难度：一星</li>
+                <li>实用程度：五星</li>
+                <li>...</li>
+            </ul>
+        </div>
+
+
+    </body>
+    <footer>
+        <a href="../index.html">返回</a>
+        <a href="../mathjax/equation-refs.html">MathJax Demos</a>
+    </footer>
+</html>

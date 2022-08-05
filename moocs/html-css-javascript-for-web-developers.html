@@ -4,21 +4,74 @@
         <title>
             HTML, CSS, and Javascript for Web Developers 学习笔记
         </title>
+
+        <style>
+        p {
+            color: black;
+            font-size: 16px;
+            width: 380px;
+        }
+        li {
+            font-weight: bold;
+        }
+        h2 {
+            color: black;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #box {
+            background-color: green;
+            /* From innermost to outermost: content, padding, border, margin; 
+               background-color only covers the area of content and padding. 
+            */
+            padding: 30px;
+            border: 5px solid gray;
+            margin: 40px; /* Margin is outside of border, and not included when calculating element size. */
+            width: 500px;
+            box-sizing: border-box;
+        }
+        #content {
+            background-color: lightgray;
+            padding: 0px;
+            border: 1px solid blue;
+            margin: 0px;
+        }
+
+        </style>
     </head>
+
     <body>
         <h1>课程名称：HTML, CSS, and Javascript for Web Developers</h1>
+        <a href="../index.html">返回</a>
         <a href="https://www.coursera.org/learn/html-css-javascript-for-web-developers/home/info">课程链接</a>
-        
+
         <h2>一、主要收获</h2>
         <div>
             <ol>
-                <li>动手能力，边学边写，边写边学！</li>
-                <li>首次接触到前端开发辅助工具<a href="https://browsersync.io/">browser-sync</a>,并用于学习和开发，实现网页效果本地化的实时呈现。</li>
+                <p>动手能力，边学边写，边写边学！<br>
+                   首次接触到前端开发辅助工具<a href="https://browsersync.io/">browser-sync</a>,并用于学习和开发，实现网页效果本地化的实时呈现。
+                </p>
             </ol>
         </div>
 
         <h2>二、学习笔记</h2>
         <div>
+            <ol>
+                <li>The Box Model</li>
+                <div id='box'>
+                    <div id='content'>
+                        <p id='content'>The relationships among element, padding, border, margin. <br>
+                           1. the topmost element has a gray background-color and a 1px blue border without padding and margin.<br>
+                           2. the element under the topmost element has a green background-color, and a padding 30px wide in four directions 
+                            which is inside a 5px wide black border.<br>
+
+                        </p>
+                    </div>
+
+                </div>
+            </ol>
 
         </div>
 
@@ -30,7 +83,6 @@
                 <li>...</li>
             </ul>
         </div>
-
 
     </body>
     <footer>

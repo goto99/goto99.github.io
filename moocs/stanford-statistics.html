@@ -1,149 +1,339 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>
-            Stanford University: Introduction to Statistics 学习笔记
-        </title>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Stanford University: Introduction to Statistics 学习笔记
+    </title>
 
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width">
-        <script>
-        MathJax = {
-          tex: {
-            tags: 'all'
-          }
-        };
-        </script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>        
-    </head>
-    <body>
-        <h1>课程名称：Introduction to Statistics</h1>
-        <a href="https://www.coursera.org/learn/stanford-statistics/home/info">课程链接</a>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width">
+    <script>
+    MathJax = {
+        tex: {
+        tags: 'all'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>      
+      
+</head>
+<body>
+    <h1>课程名称：Introduction to Statistics</h1>
+    <a href="https://www.coursera.org/learn/stanford-statistics/home/info">课程链接</a>
 
-
-        <h2>学习笔记</h2>
-        <div>
-            <ol>
-                <li><h3>Week 3 Normal Approximation and Binomial Distribution, Sampling Distributions and the Central Limit Theorem</h3> </li>
-                <ul>
-                    <li style="font-weight: bold;">The Empirical Rule</li>
-                    <div  style="padding: 10px;">
-                        If the data follow the normal curve, then (1) about 2/3 (68%) of the data fall within one standard deviation of the mean, (2) about 95% 
-                        fall withing 2 standard deviations of the mean, (3) about 99.7% fall within 3 standard deviations of the mean.
-                    </div>
-
-                    <li style="font-weight: bold;">The Expected Value, Standard Error (SE)</li>
-                    <div  style="padding: 10px;">
-                        The standard error (SE) of a statistic tells roughly how far off the statistic will be from its expected value (population mean).
-                        ------SE的数学意义是对样本统计量（statistic）与总体参数（parameter）之间的偏差的估计。
-                        So the SE for a statistic plays the same role that the standard deviation &sigma; plays for one observation drawn at random.<br>
-                        Notice that the SE of sample mean , the SE of sample sum (count) and the SE of sample percentages are different.<br>
-                   
-                        SE of sample mean: $$SE(\overline x_n ) = {\sigma \over\sqrt{n}} \label{ref1}$$
-                        SE of sample sum (count): $$SE(S_n) = SE(n\overline x_n) =  {\sqrt{n}\sigma}$$
-                        SE of sample percentage: $$SE({S_n \over n} \times 100\% ) = SE(\overline x_n  \times 100\%) =  {{\sigma \over \sqrt{n}} \times 100\%}$$
-
-                    </div>
-
-                    <li style="font-weight: bold;">Sampling Distribution of a Statistic</li>
-                    <div  style="padding: 10px;">
-                        There are three histograms that are easily get confused: (1) the empirical histogram shows the observed data, (2) the probability histogram 
-                        of statistic shows the sampling distribution of statistic, (3) the probability histogram for producing the data shows what the chances are 
-                        for simulating.
-                    </div>
-
-                    <li style="font-weight: bold;">The Law of Large Numbers</li>
-                    <div  style="padding: 10px;">
-                        According to equation (\ref{ref1}), the standard error of sample mean, goes to zero as the sample size n increases. Therefore the sample mean 
-                        will likely be close to its expected value &mu; if the sample size n is large. This is the law of large numbers. Keep in mind that the law of 
-                        large numbers applies 
-                        <ul>
-                        <li>for averages and therefor also for percentages, but not for sums as their SE increases</li>
-                        <li>for sampling with replacement from a population, or for simulating data from a probability histogram</li>
-                        <li>more advanced version of the law of large numbers state that the empirical histogram of the data will be close to the probability histogram. 
-                            If the sample size n is large.</li>
-                        </ul>
-                    </div>
-    
-                    <li style="font-weight: bold;">The Central Limit Theorem</li>
-
-                </ul>
-                <li><h3>Week 4 Regression</h3> </li>
-                <ul>
-                    <li style="font-weight: bold;">Correlation</li>
-                    <div  style="padding: 10px;">
-                        Correlation Coefficient
-                        $$r = {{1\over {n-1}} \Sigma _i^n {(x_i-\overline x) \over {s_x}}{(y_i-\overline y) \over {s_y}}}$$
-                        Note that the formula is actually the sum of the products of the corresponding z-scores divided by 1 less than the sample size n.
-                        <p>Keep in mind that Correlation Coefficient is only useful for measuring linear association. It should be stressed that a correlation at or 
-                            near zero doesn't mean there isn't a relationship between the variables; there may still be a strong non-linear relationship. Also remember 
-                            that correlation does not mean causation.</p>
-                    </div>
-
-                    <li style="font-weight: bold;">Coefficient of determination</li>
-                    <div style="padding: 10px;">
-                        r<sup>2</sup> is the ratio of the variance of the predicted value to the variance of the observed value y. That is, there is a partition of the 
-                        y-variance, and r<sup>2</sup> is the proportion of this variance that is predictable from a knowledge of x. How large a value of r<sup>2</sup> 
-                        is desirable depends on the application under consideration. While scientific experiments often aim for an r<sup>2</sup> in the 90% or above range, 
-                        observational studies with r<sup>2</sup> of 10% to 20% might be considered informative.(These two points together is exactly what confuses people 
-                        a lot.)
-                    </div>
-                    <li style="font-weight: bold;">Least Square Regression line</li>
-                    <div style="padding: 10px;">
-                        $$ \hat y - \overline y = b_1(x-\overline x)$$
-                        The slope of the Least Square Regression line can be determined from the formula $$b_1 = {r {{s_y}\over {s_x}}}$$
-                        That is each standard deviation change in x results in a change of r standard deviations in y. 
-                        We can rewrite the regression line as $$ {{\hat y -\overline y} \over {s_y}} = r{{x-\overline x} \over {s_x}} \Rightarrow z_y = rz_x \label{ref7}$$
-                        <p>It is also important to understand that even if a linear model is appropriate, it may still be weak with a low correlation coefficient. And, 
-                            alternatively, even if the residual plot shows a non perfect linear relationship,
-                            with high r<sup>2</sup>, the linear model still might be a good model for the problem at hand.
-                        </p>
-                    </div>
-
-                    <li style="font-weight: bold;">Inference in Regression</li>
-                    <div style="padding: 10px;">
-                        Regression to the mean (or: the regression effect) is simply a consequence of there being a scatter around the regression line. Erroneously 
-                        assuming that this occurs due to some action is the regression fallacy. <br>
-                        Note that from formula (\ref{ref7}) Predicting y from x and x from y are different, there are two different regression line equations, don't 
-                        misuse one equation for two kinds of prediction.
-                    </div>
-                    <li style="font-weight: bold;">Residual Plots, Heteroscedasticity, and Transformations</li>
-                    <div style="padding: 10px;">
-                        Note that order is important, residual equals observed minus predicted $$\hat e_i = y_i - \hat y_i$$ 
-                        When plot y-residuals vesus x, if any trends present, it's not appropriate to use linear regression to predict y from x directly, transformations 
-                        of x or y are needed. If residuals open up, the residual scatter 
-                        is heteroscedastic, transformation of y variable is needed.
-                    </div>
-
-                </ul>
-                <li><h3>Week 5 Confidence Intervals, Tests of Significance</h3> </li>
-                <ul>
-                        <li style="font-weight: bold;">Confidence Intervals</li>
-                        <div  style="padding: 10px;">
-                        </div>
-
-                        <li style="font-weight: bold;">Hypothesis Testing</li>
-                        <div  style="padding: 10px;">
-                        </div>
-                </ul>
-
-            </ol>
-        </div>
-        
-        <div>
-            <p>个人评价：</p>
+    <h2>学习笔记 (2022/8/1~2022/8/10)</h2>
+    <div>
+        <ol>
+            <li><h3>Week 0 NOTES about common misunderstandings</h3> </li>
             <ul>
-                <li>语言难度：一星</li>
-                <li>实用程度：五星</li>
-                <li>...</li>
+                <li>  &#770; : HAT over a letter means <b>PREDICTED</b> value of that variable.</li>
+                <li>  &#773; : BAR over a letter means <b>AVG</b> of that variable.</li>
+                <li> Population parameters (<i>&mu;, &sigma; </i>etc.) and sample statistics (<i>x&#773;, s</i> etc.) use <b>DIFFERENT</b> symbols.</li>
+                <li> <b>Outliers</b>: The numerical rule for designating outliers is to calculate 1.5 times the interquantile range (IQR) and then call 
+                a value an <em>outlier</em> if it is more than 1.5 &times; IQR below the first quantitle or 1.5 &times; IQR above the third quantile, some 
+                computer output shows two level of outliers---mild (between 1.5 IQR and 3 IQR) and extreme (more than 3 IQR).
+                (Barron's AP Statistics, 9ed, P63,P73).</li>
+                <li>  Distribution Comparison: <b>shape, outliers(unusual values), center and spread</b> (SOCS or CUSS).</li>
+                <li> a "discovery" occurs when a test rejects the null hypothesis. In the medical literature a discovery is called a "positive result". 
+                    So a "false positive" is a "false discovery".</li>
+
             </ul>
-        </div>
+            <li><h3>Week 3 Normal Approximation and Binomial Distribution, Sampling Distributions and the Central Limit Theorem</h3> </li>
+            <ul>
+                <li style="font-weight: bold;">The Empirical Rule</li>
+                <div  style="padding: 10px;">
+                    If the data follow the normal curve, then (1) about 2/3 (68%) of the data fall within one standard deviation of the mean, (2) about 95% 
+                    fall withing 2 standard deviations of the mean, (3) about 99.7% fall within 3 standard deviations of the mean.
+                </div>
+
+                <li style="font-weight: bold;">Sampling Distributions</li>
+                <div  style="padding: 10px;">
+                    <ul> <b>Distributions describe variability!</b> There are three kinds of distribution:
+                        <li>a <i>population distribution</i>: &mu;, &sigma; (variability in an entire population), </li>
+                        <li>a <i>sample distribution</i>: x&#773;, s (variability in a particular sample), and </li>
+                        <li>a <i>sampling distribution</i>: &mu;, SE(x&#773;)/SE(S<sub>n</sub>) /SE(p&#770;) (variability among sample means/sums/percentages).</li>
+                    </ul>
+                    <p style="font-weight: bold">parameter, statistic, sampling distribution (SE of sampling means/sums/percentages), unbiased</p>
+                    <p><b><em>Population parameters</em></b> &mu; and &sigma; are fixed quantities for a population. The sample mean <em>x&#773;</em> and sample standard deviation 
+                    <em>s</em> are examples of <b><em>statistics</em></b>. Statistics are used to make inferences about population parameters, statistics vary depending on the 
+                    particular sample chosen. The probability distribution showing how a statistic varies is called a <b><em>sampling distribution</em></b>. The sampling 
+                    distribution is <b><em>unbiased</em></b> if its mean is equal to the associated population parameter. A sampling distribution is not the same thing as the 
+                    distribution of a sample. </p>
+                    <b>SAMPLING DISTRIBUTION OF A SAMPLE MEAN</b><br>
+                    <p>The sampling distribution of random variable <em>x&#773;</em> has mean <i>&mu;</i>，standard deviation <i>&sigma;<sub>x&#773;</sub></i> and standard 
+                        error <em>SE(x&#773;<sub>n</sub>)</em>.</p>
+                    <b>SAMPLING DISTRIBUTION OF A SAMPLE SUM</b><br>
+                    <p>The sampling distribution of random variable <em>S<sub>n</sub>=nx&#773;<sub>n</sub></em> has mean <i>n&mu;</i>, standard deviation 
+                        and standard error <em>SE(nx&#773;<sub>n</sub>)</em>.</p>
+                    <b>SAMPLING DISTRIBUTION OF A SAMPLE PROPORTION</b><br>
+                    <p>The sampling distribution of random variable <em>p&#770;</em> has mean <i>p</i>, standard deviation <i>&sigma;<sub>p&#770;</sub></i> and standard error 
+                        <em>SE(x&#773;<sub>n</sub> &times; 100%)</em>.</p>
+                    <b>SAMPLING DISTRIBUTION OF A DIFFERENCE BETWEEN TWO INDEPENDENT SAMPLE PROPORTIONS</b><br>
+                    <p>The sampling distribution of random variable <em>p&#770;<sub>1</sub>-p&#770;<sub>2</sub></em> has mean <i>p<sub>1</sub>-p<sub>2</sub></i>, standard 
+                        deviation <i>&sigma;<sub>d</sub>=&Sqrt;(&sigma;<sub>1</sub><sup>2</sup>+&sigma;<sub>2</sub><sup>2</sup>)</i> and standard error 
+                        <em>SE(p&#770;<sub>1</sub>-p&#770;<sub>2</sub>)</em>.</p>
+                    <b>SAMPLING DISTRIBUTION OF A DIFFERENCE BETWEEN TWO INDEPENDENT SAMPLE MEANS</b><br>
+                    <p>The sampling distribution of random variable <em>x&#773;<sub>1</sub>-x&#773;<sub>2</sub></em> has mean <i>&mu;<sub>1</sub>-&mu;<sub>2</sub></i>, standard 
+                        deviation <i>&sigma;<sub>x&#773;<sub>1</sub>-x&#773;<sub>2</sub></sub></i> and standard error <em>SE(x&#773;<sub>1</sub>-x&#773;<sub>2</sub>)</em>.</p>
+                    Difference between <b>standard deviation &sigma;</b> and <b>standard error SE</b>: With proportions and means we typically do not know population parameters. So 
+                    in calculating <b>standard deviations &sigma;</b> of the sampling models, we actually estimate using <b>sample statistics</b>. In this case, we use the term 
+                    <b><i>standard error (SE)</i></b> instead of <b>standard deviation &sigma;</b>.
+                </div>
+
+                <li style="font-weight: bold;">The Expected Value, Standard Error (SE)</li>
+                <div  style="padding: 10px;">
+                    The standard error (SE) of a statistic tells roughly how far off the statistic will be from its expected value (population mean). --- SE is an estimate of 
+                    the discrepancy of a sample statistic to the population parameter。
+                    So the SE for a statistic plays the same role that the standard deviation &sigma; plays for one observation drawn at random.<br>
+                    Notice that the SE of a sample mean, the SE of a sample sum (count) and the SE of a sample percentage are different.<br>
+                    
+                    SE of sample mean: $$SE(\overline x_n ) = {s \over\sqrt{n}} \label{ref1}$$ 
+                    Standard deviation of sample mean: $$\sigma _{\overline x_n} = {\sigma \over {\sqrt n}}$$
+                    
+                    SE of sample sum (count): $$SE(S_n) = SE(n\overline x_n) =  {\sqrt{n}s}$$
+                                            
+                    SE of sample proportion/percentage: $$SE({S_n \over n} \times 100\% ) = SE(\hat p \times 100\%) = \sqrt{\frac {\hat p(1-\hat p)}n} \times 100\%$$
+
+                    Standard deviation of sample proportion: $$\sigma_{\hat p} = \sqrt{\frac {p(1-p)}n} \times 100\%$$
+
+                    SE of a difference between two independent sample proportions: $$SE(\hat p_1-\hat p_2) = {\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1} + \frac{\hat p_2(1-\hat p_2)}{n_2}}}$$
+                    Standard deviation of two sample proportions difference: $$\sigma _{\hat p_1-\hat p_2}= {\sqrt{\frac{p_1(1-p_1)}{n_1} + \frac{p_2(1-p_2)}{n_2}}}$$
+
+                    SE of a difference between two independent sample means: $$ SE(\overline x_1-\overline x_2) = {\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
+                    Standard deviation of two sample means difference: $$ \sigma _{\overline x_1-\overline x_2} = {\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$$
+                </div>
+
+                <li style="font-weight: bold;">Sampling Distribution of a Statistic</li>
+                <div  style="padding: 10px;">
+                    There are three histograms that are easily get confused: (1) the empirical histogram shows the observed data, (2) the probability histogram 
+                    of statistic shows the sampling distribution of statistic, (3) the probability histogram for producing the data shows what the chances are 
+                    for simulating.
+                </div>
+
+                <li style="font-weight: bold;">The Law of Large Numbers</li>
+                <div  style="padding: 10px;">
+                    According to equation (\ref{ref1}), the standard error of sample mean, goes to zero as the sample size n increases. Therefore the sample mean 
+                    will likely be close to its expected value &mu; if the sample size n is large. This is the law of large numbers. Keep in mind that the law of 
+                    large numbers applies 
+                    <ul>
+                    <li>for averages and therefor also for percentages, but not for sums as their SE increases</li>
+                    <li>for sampling with replacement from a population, or for simulating data from a probability histogram</li>
+                    <li>more advanced version of the law of large numbers state that the empirical histogram of the data will be close to the probability histogram. 
+                        If the sample size n is large.</li>
+                    </ul>
+                </div>
+
+                <li style="font-weight: bold;">The Central Limit Theorem</li>
+                <div>
+                    The larger the sample size, the more the <b>sampling distribution</b> (probability distribution of the sample means) looks like a normal distribution.
+                </div>
+
+            </ul>
+            <li><h3>Week 4 Regression</h3> </li>
+            <ul>
+                <li style="font-weight: bold;">Correlation</li>
+                <div  style="padding: 10px;">
+                    <b>Correlation Coefficient</b>
+                    $$r = {{1\over {n-1}} \Sigma _i^n {(x_i-\overline x) \over {s_x}}{(y_i-\overline y) \over {s_y}}}$$
+                    Note that the formula is actually the sum of the products of the corresponding z-scores divided by 1 less than the sample size <i>n</i>.<br>
+                    
+                    <p>Keep in mind that Correlation Coefficient is only useful if the relationship appears roughly linear. It should be stressed that a correlation at or 
+                        near zero doesn't mean there isn't a relationship between the variables; there may still be a strong non-linear relationship. Also remember 
+                        that correlation does not mean causation.</p>
+                </div>
+
+                <li style="font-weight: bold;">Coefficient of determination</li>
+                <div style="padding: 10px;">
+                    r<sup>2</sup> is <b>the ratio of the variance of the predicted value to the variance of the observed value</b> y. That is, there is a partition of the 
+                    y-variance, and r<sup>2</sup> is the proportion of this variance that is predictable from a knowledge of <i>x</i>. How large a value of r<sup>2</sup> 
+                    is desirable depends on the application under consideration. While scientific experiments often aim for an r<sup>2</sup> in the 90% or above range, 
+                    observational studies with r<sup>2</sup> of 10% to 20% might be considered informative.(These two points together is exactly what confuses people 
+                    a lot.)
+                </div>
+                <li style="font-weight: bold;">Least Square Regression line</li>
+                <div style="padding: 10px;">
+                    $$ \hat y - \overline y = b_1(x-\overline x)$$
+                    The slope of the Least Square Regression line can be determined from the formula $$b_1 = {r {{s_y}\over {s_x}}}$$
+                    That is each standard deviation change in x results in a change of r standard deviations in y. 
+                    We can rewrite the regression line as $$ {{\hat y -\overline y} \over {s_y}} = r{{x-\overline x} \over {s_x}} \Rightarrow z_y = rz_x \label{ref7}$$
+                    <p>Note that only with <b>Standardized z-scores (z<sub>x</sub>, z<sub>y</sub>)</b>, the correlation coefficient <i>r</i> is the slope of the regression 
+                        line. Which variable is <i>x</i> and which variable is <i>y</i> matter, we cannot change <i>x, y</i> without change the slope.</p>
+                    <p>It is also important to understand that even if a linear model is appropriate, it may still be weak with a low correlation coefficient. And, 
+                        alternatively, even if the residual plot shows a non perfect linear relationship,
+                        with high r<sup>2</sup>, the linear model still might be a good model for the problem at hand.
+                    </p>
+                </div>
+
+                <li style="font-weight: bold;">Inference in Regression</li>
+                <div style="padding: 10px;">
+                    Regression to the mean (or: the regression effect) is simply a consequence of there being a scatter around the regression line. Erroneously 
+                    assuming that this occurs due to some action is the regression fallacy. <br>
+                    Note that from formula (\ref{ref7}) Predicting y from x and x from y are different, there are two different regression line equations, don't 
+                    misuse one equation for two kinds of prediction.
+                </div>
+                <li style="font-weight: bold;">Residual Plots, Heteroscedasticity, and Transformations</li>
+                <div style="padding: 10px;">
+                    Note that order is important, residual equals observed minus predicted $$\hat e_i = y_i - \hat y_i$$ 
+                    When plot y-residuals vesus x, if any trends present, it's not appropriate to use linear regression to predict y from x directly, transformations 
+                    of x or y are needed. If residuals open up, the residual scatter 
+                    is heteroscedastic, transformation of y variable is needed.
+                </div>
+
+            </ul>
+            <li><h3>Week 5 Confidence Intervals, Tests of Significance</h3> </li>
+            <ul>
+                <li style="font-weight: bold;">Confidence Intervals</li>
+                <div  style="padding: 10px;">
+                    Why <b>confidence intervals not probability intervals?</b> Because the population <i>p or &mu;</i> is a constant, and for a sample, the interval is 
+                    constructed and fixed also, so the population &mu; either falls into the interval or not, there are no chances involved, so confidence intervals 
+                    are used.
+                </div>
+                <div  style="padding: 10px;">
+                    There is the <b><i>success rate for the method</i></b>, that is, the proportion of times repeated applications of this method would capture the 
+                    true population parameters. when the sampling process is repeated, then the sample means and confidence intervals corresponding to those 
+                    samples would be random, in which confidence intervals the population &mu; would fall into, if we label them 1-100, would be random also.
+                    The bootstrap principle states that we can estimate &sigma; by its sample version <i>s</i> and still get an approximately correct confidence interval.  
+                </div>
+
+                <li style="font-weight: bold;">Hypothesis Testing</li>
+                <div  style="padding: 10px;">
+                    The Null Hypothesis, H<sub>0</sub>, states that <strong>"nothing extrordinary is going on"</strong>. ------ This is what the test assumes true first 
+                    and calculates based on for the following calculation, and the test would reject if data is not compatible with H<sub>0</sub> according to the calculation.<br>
+                    The Alternative Hypothesis, H<sub>A</sub>, states that there is a different chance process that generates the data. ------ This is what decides 
+                    it's a one-sided test or two-sided test, and H<sub>A</sub> is a <strong>discovery</strong>, in medical area, a <strong>positive</strong> result is a 
+                    <strong>discovery</strong>, which is valuable.<br>
+                    Hypothesis testing proceeds by (1) collecting data (2) and evaluating whether the data are compatible with H<sub>0</sub> or not (in which case (3) one 
+                    rejects H<sub>0</sub>), and accepts H<sub>A</sub>, thus has a new <strong>discovery</strong>.<br>
+                    <p>Recall that a <strong>"discovery"</strong> occurs when a test rejects the null hypothesis. <strong>In the medical literature a discovery is 
+                        called a "positive result"</strong>. So <strong>a "false positive" is a "false discovery"</strong>.</p>
+                </div>
+                <li style="font-weight: bold;">Setting up a test statistic</li>
+                <div  style="padding: 10px;">
+                    A test statistic measures how far away the data are from what we would expect if H<sub>0</sub> were true.<br>
+                    The most common test statistic is the z-statistic: $$z = {{observed - expected} \over {SE}}$$
+                    <b>'Observed'</b> is a statistic (sample mean, sample count, percentage, sum, etc.) calculated from the data provided for assessing H<sub>0</sub>.<br>
+                    <b>'Expected'</b> and SE are the expected value and the SE of this statistic, computed under the assumption that H<sub>0</sub> is true.<br>
+                    Large values of |z| are evidence against H<sub>0</sub>: The larger |z| is, the stronger the evidence, as |z| stands for the discrepancy between observed 
+                    value and expected value. <br>
+                    <b>p-value</b> (or: observed Significance level): The p-value is the probability of getting a value of z as extreme or more extreme than the observed z, assuming 
+                    H<sub>0</sub> is true. <br>
+                    But if H<sub>0</sub> is true, then z follows standard normal distribution, according to the central limit theorem, so the p-value can be computed with normal 
+                    approximation. The smaller p-value is, the stronger the evidence is against H<sub>0</sub>. Often the criterion for rejecting H<sub>0</sub> is a p-value 
+                    smaller than 5%. Then the result is called statistically significant.<br>
+                    <b>Alternative t-statistic for small samples.</b><br>
+                    Only when the sample size n > 20, we can estimate &sigma; by s, when the sample size is small (n &le; 20), then the normal curve is not a good enough 
+                    approximation to the the distribution of the z-statistic. Rather, an appropriate approximation is <em>Student's t-distribution</em> with <i>n-1</i> 
+                    degrees of freedom, then the flatter tails account for the additional uncertainty introduced by estimating &sigma; by:
+                    $$ s = {\sqrt{{1 \over {n-1}} \Sigma _{i=1}^n(x_i - \overline x)^2}}$$
+                    For the test statistic: $$t=\frac {\overline x - \mu}{s/\sqrt n}$$ to have a <i>t-distribution</i>, we actually need that the sampling distribution of 
+                    <i>x&#773;</i> is normal. This follows either <b> (1) if the original population has a normal distribution or (2) if the sample size is large enough (from CLT).</b><br>
+
+                    In this case it is also better to replace the confidence interval:
+                    $$\overline x \pm zSE$$ by $$ \overline x \pm t_{n-1}SE$$
+                    Use the <i>t-distribution</i> with an SRS of size <i>n</i> and <br> 
+                    (1) large <i> n (&ge;40) </i>: unnecessary to make any assumptions about parent population.  <br> 
+                    (2) medium <i>n (15-40) </i>: sample should show no extreme values and little, if any, skewness; or assume parent population is normal.  <br> 
+                    (3) small <i>n (&le;15)</i>: sample should show no outliers and no skewness; or assume parent population is normal.
+                </div>
+
+                <li style="font-weight: bold;">Statistical Significance vs. Importance</li>
+                <div  style="padding: 10px;">
+                    Statistically significant does not mean that the effect size is important, as a large sample size n makes SE small, so even a small exceedence over the 
+                    normal value may give a statistically significant result. Therefore it is helpful to complement a test with a confidence interval.<br>
+                </div>
+                <div  style="padding: 10px; font-weight: bold">
+                    There is a general connection between Confidence Interval (CI) and tests: <br>
+                    A 95% Confidence Interval contains all values for the Null Hypothesis that will not be rejected by a two-sided test at a 5% significance level. ------ 
+                    only those values for the Null Hypothesis that are not in the Confidence Interval will be rejected by a two-sided test at a 5% significance level.
+                    (A 5% significance level means that the threshold for the p-value is 5%).
+                </div>
+
+                <li style="font-weight: bold;">Two types of errors</li>
+                <div  style="padding: 10px;">
+                    There are two ways that a test can result in a wrong decision:<br>
+                    <ul>
+                        <li>H<sub>0</sub> is true, but was erroneously rejected, and H<sub>A</sub> falsely accepted: <b>Type I error</b> ('False Positive', It is a false rejection 
+                            of a true hypothesis H<sub>0</sub>, and therefore a False Acceptance of H<sub>A</sub>.)</li>
+                        <li>H<sub>0</sub> is false, but we fail to reject it, and H<sub>A</sub> falsely Not accepted:: <b>Type II error</b> ('False Negative', It is the false 
+                            acceptance of an incorrect hypothesis, and therefore a False Not-Acceptance of H<sub>A</sub>.)</li>
+                    </ul>
+                    Rejecting H<sub>0</sub> if the p-value is smaller than 5% means P(type I error) &le; 5%.
+                </div>
+                <figure role="group">
+                    <img
+                        src="./stanford-statistics/hypothesis_testing.jpg"
+                        width="400px"
+                        alt="The matrix showing Type I Error & Type II Error">
+                    <figcaption>
+                        Type I Error vs. Type II Error
+                    </figcaption>
+                </figure>
+            </ul>
+
+            <li><h3>Week 6 Resampling, Analysis of Categorical Data</h3> </li>
+            <ul>
+                <li style="font-weight: bold;">Monte Carlo method</li>
+                <div  style="padding: 10px;">
+                </div>
+                <li style="font-weight: bold;">Bootstrap method</li>
+                <div  style="padding: 10px;">
+                </div>
+                <li style="font-weight: bold;">The Chi-Square Test for Goodness of Fit</li>
+                <div  style="padding: 10px;">
+                </div>
+                <li style="font-weight: bold;">The Chi-Square Test for Homogeneity and Independence</li>
+                <div  style="padding: 10px;">
+                </div>
+            </ul>
+            
+            <li><h3>Week 7 One-Way Analysis of Variance (ANOVA)</h3> </li>
+            <ul>
+                <li style="font-weight: bold;">The Analysis of Variance F-Test</li>
+                <div  style="padding: 10px;">
+                </div>
+
+            </ul>
+
+            <li><h3>Week 8 Multiple Comparisons</h3> </li>
+            <ul>
+                <li style="font-weight: bold;">Data snooping: significant only by chance</li>
+                <div  style="padding: 10px;">
+                    <p><b>replicability</b>: getting similar conclusions with different samples, procedures and data analysis methods.</p>
+                    <p><b>reproducibility</b>: getting the same results when using the same data and methods of analysis.</p>
+                </div>
+                <li style="font-weight: bold;">Multiple testing fallacy or look-elsewhere effect</li>
+                <div  style="padding: 10px;">
+                    <p><b>Bonferroni Correction</b>: </p>
+                    <p><b>False Discovery Proportion (FDP)</b></p>
+                    <p><b>False Discovery Rate (FDR)</b>: Benjamini-Hochberge procedure to control the FDR at level &alpha;</p>
+                    <p><b>Using a Validation Set</b>: </p>
+                </div>
+
+            </ul>
+        </ol>
+    </div>
+    
+    <div>
+        <p>个人评价：</p>
+        <ul>
+            
+            <li>语言难度：一星</li>
+            <li>实用程度：五星</li>
+            <li>...</li>
+        </ul>
+    </div>
 
 
-    </body>
-    <footer>
-        <a href="../index.html">返回</a>
-        <a href="../mathjax/equation-refs.html">MathJax Demos</a>
-    </footer>
+</body>
+<footer>
+    <ul>
+        <li><a href="../index.html">返回</a></li>
+        <li><a href="../mathjax/equation-refs.html">MathJax Demos</a></li>
+        <li><a href="https://web.ma.utexas.edu/users/mks/statmistakes/StatisticsMistakes.html" target="_blank">Common mistakes in statistics</a></li>
+        
+    </ul>
+    
+    
+</footer>
 </html>

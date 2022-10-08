@@ -43,6 +43,10 @@ body {
 ol, ul {
 	list-style: none;
 }
+ul > li {
+	min-inline-size: 3px;
+	list-style-type: square;
+}
 blockquote, q {
 	quotes: none;
 }

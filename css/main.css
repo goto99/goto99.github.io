@@ -60,5 +60,5 @@ table {
 	border-spacing: 10px;
 }
 th {background-color: #04AA6D; color: white;}
-tr {align: center}
+tr {text-align: center}
 tr:nth-child(even) {background-color: #f2f2f2;}
